@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = "src/test/resources/features",
-        glue = {"stepDefinitions", "hooks/api"},
-        tags = "@Smoke",
+        glue = {"stepDefinitions", "hooks/Edevlet"},
+        tags = "@smoke",
         dryRun = false
 )
 public class runnerApi {
