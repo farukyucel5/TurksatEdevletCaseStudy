@@ -36,8 +36,8 @@ public class PharmaciesSteps {
         pharmacyQueryPage.setCountyAndVerifyThePharmacyTable();
     }
 
-    @And("Click on the Button {string} and verify it redirects to the related page")
-    public void clickOnTheButtonAndVerifyItRedirectsToTheRelatedPage(String element) {
-        onDutyPharmacyPage.clickOntheElement(element);
+    @And("Click on the Button Haritada Göster and verify it redirects to the related page")
+    public void clickOnTheButtonHaritadaGösterAndVerifyItRedirectsToTheRelatedPage() {
+        pharmacyQueryPage.ClickOnTheButtonHaritadaGosterAndVerifyTheResult();
     }
 }

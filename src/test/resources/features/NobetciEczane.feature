@@ -13,5 +13,5 @@ Feature: On-duty pharmacies
     Given Select the location
     And Enter the date
     Then Click on the Button "Sorgula"
-    And Click on the Button "Haritada Göster" and verify it redirects to the related page
+    And Click on the Button Haritada Göster and verify it redirects to the related page
     

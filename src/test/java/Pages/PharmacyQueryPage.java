@@ -26,6 +26,10 @@ public class PharmacyQueryPage {
 
     @FindBy(id="searchTable")
     public WebElement countyTable;
+    @FindBy(xpath = "//tbody/tr/td[5]/a")
+    public List<WebElement> showingInTheMap;
+    @FindBy(id = "mapid")
+    public WebElement map;
 
     public void setCountyAndVerifyThePharmacyTable(){
         Select select=new Select(countyDropbox);
@@ -34,6 +38,15 @@ public class PharmacyQueryPage {
                     .replaceAll("\\s","");
             select.selectByVisibleText(county);
             Assert.assertTrue(countyTable.isDisplayed());
+        }
+    }
+
+    public void ClickOnTheButtonHaritadaGosterAndVerifyTheResult(){
+        for (int i = 0; i < 20; i++) {
+            reuseableMethods.jsClick(showingInTheMap.get(i));
+            Assert.assertTrue(map.isDisplayed());
+            Driver.driver.navigate().back();
+
         }
     }
 

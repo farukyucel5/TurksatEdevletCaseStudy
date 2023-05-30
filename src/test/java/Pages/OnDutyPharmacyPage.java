@@ -38,13 +38,6 @@ public class OnDutyPharmacyPage {
     public void clickOntheElement(String element){
         switch (element){
             case "Sorgula"->reuseableMethods.jsClick(sorgulaBtn);
-            case "Haritada Göster"->{
-                for (int i = 0; i < 20; i++) {
-                   reuseableMethods.jsClick(showingInTheMap.get(i));
-                   Assert.assertTrue(map.isDisplayed());
-                    Driver.driver.navigate().back();
-                }
-            }
         }
     }
 
