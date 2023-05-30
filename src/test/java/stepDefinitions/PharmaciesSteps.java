@@ -31,8 +31,8 @@ public class PharmaciesSteps {
 
     }
 
-    @And("Select the county")
-    public void selectTheCounty() {
-     pharmacyQueryPage.setCounty();
+    @And("Select the county and verify the pharmacy table has been displayed")
+    public void selectTheCountyAndVerifyThePharmacyTableHasBeenDisplayed() {
+        pharmacyQueryPage.setCountyAndVerifyThePharmacyTable();
     }
 }

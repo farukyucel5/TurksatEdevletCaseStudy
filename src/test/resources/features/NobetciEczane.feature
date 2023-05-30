@@ -7,4 +7,4 @@ Feature: On-duty pharmacies
     Given Select the location
     And Enter the date
     Then Click on the Button "Sorgula"
-    And Select the county
+    And Select the county and verify the pharmacy table has been displayed
