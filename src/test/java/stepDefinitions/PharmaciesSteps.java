@@ -35,4 +35,9 @@ public class PharmaciesSteps {
     public void selectTheCountyAndVerifyThePharmacyTableHasBeenDisplayed() {
         pharmacyQueryPage.setCountyAndVerifyThePharmacyTable();
     }
+
+    @And("Click on the Button {string} and verify it redirects to the related page")
+    public void clickOnTheButtonAndVerifyItRedirectsToTheRelatedPage(String element) {
+        onDutyPharmacyPage.clickOntheElement(element);
+    }
 }

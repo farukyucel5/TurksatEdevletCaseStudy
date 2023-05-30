@@ -29,7 +29,7 @@ public class PharmacyQueryPage {
 
     public void setCountyAndVerifyThePharmacyTable(){
         Select select=new Select(countyDropbox);
-        for (int i = 0; i <1 ; i++) {
+        for (int i = 0; i <2 ; i++) {
             String county=reuseableMethods.dataFetching(i,0).toString()
                     .replaceAll("\\s","");
             select.selectByVisibleText(county);

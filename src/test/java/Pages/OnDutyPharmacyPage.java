@@ -1,12 +1,15 @@
 
 package Pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 import utilities.ReuseableMethods;
+
+import java.util.List;
 
 public class OnDutyPharmacyPage {
     ReuseableMethods reuseableMethods=new ReuseableMethods();
@@ -15,12 +18,16 @@ public class OnDutyPharmacyPage {
     }
 
     @FindBy(id = "plakaKodu")
-    private WebElement cityDropdown;
+    public WebElement cityDropdown;
 
     @FindBy(xpath = "//input[@id='nobetTarihi']")
-    private WebElement dateBox;
+    public WebElement dateBox;
     @FindBy(xpath = "//input[@value='Sorgula']")
-    private WebElement sorgulaBtn;
+    public WebElement sorgulaBtn;
+    @FindBy(xpath = "//tbody/tr/td[5]/a")
+    public List<WebElement> showingInTheMap;
+    @FindBy(id = "mapid")
+    public WebElement map;
     public  void selectCity(){
         Select select=new Select(cityDropdown);
         select.selectByVisibleText("ANKARA");
@@ -31,6 +38,13 @@ public class OnDutyPharmacyPage {
     public void clickOntheElement(String element){
         switch (element){
             case "Sorgula"->reuseableMethods.jsClick(sorgulaBtn);
+            case "Haritada Göster"->{
+                for (int i = 0; i < 20; i++) {
+                   reuseableMethods.jsClick(showingInTheMap.get(i));
+                   Assert.assertTrue(map.isDisplayed());
+                    Driver.driver.navigate().back();
+                }
+            }
         }
     }
 
