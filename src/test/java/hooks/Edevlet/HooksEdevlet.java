@@ -23,8 +23,8 @@ public class HooksEdevlet {
         mainPage.sendText("Password");
         mainPage.clickOntheElement("giriş yap");
     }
-    @After
+   /* @After
     public void teardown() {
         driver.quit();
-    }
+    }*/
 }

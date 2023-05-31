@@ -35,10 +35,8 @@ public class OnDutyPharmacyPage {
     public  void sendTheDate(){
         dateBox.sendKeys("03/06/2023");
     }
-    public void clickOntheElement(String element){
-        switch (element){
-            case "Sorgula"->reuseableMethods.jsClick(sorgulaBtn);
-        }
+    public void clickOntheElement(){
+       reuseableMethods.jsClick(sorgulaBtn);
     }
 
 

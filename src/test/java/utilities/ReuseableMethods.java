@@ -4,7 +4,9 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -41,6 +43,22 @@ public class ReuseableMethods {
             throw new RuntimeException(e);
         }
         return workbook.getSheet("Counties").getRow(row).getCell(column);
+    }
+
+    public void navigateToTheServiceToBeTested(String name){
+        switch (name){
+            case "On-Duty Pharmacy" ->Driver.
+                    driver.get("https://www.turkiye.gov.tr/saglik-titck-nobetci-eczane-sorgulama");
+            case "Certificate of birth registration copy."->Driver.
+                    driver.get("https://www.turkiye.gov.tr/nvi-nufus-kayit-ornegi-belgesi-sorgulama");
+        }
+    }
+
+    public void scrollToElementByActions(int count){
+        for (int i = 0; i < count; i++) {
+            Actions actions=new Actions(Driver.driver);
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+        }
     }
 
 }

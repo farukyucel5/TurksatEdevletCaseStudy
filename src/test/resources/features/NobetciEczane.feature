@@ -6,12 +6,12 @@ Feature: On-duty pharmacies
   Scenario: Find the pharmacies on duty based on the location.
     Given Select the location
     And Enter the date
-    Then Click on the Button "Sorgula"
+    Then Click on the Button Sorgula
     And Select the county and verify the pharmacy table has been displayed
-  @smoke
+
   Scenario: Showing on the map
     Given Select the location
     And Enter the date
-    Then Click on the Button "Sorgula"
+    Then Click on the Button Sorgula
     And Click on the Button Haritada Göster and verify it redirects to the related page
     
