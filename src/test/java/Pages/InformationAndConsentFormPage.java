@@ -1,4 +1,5 @@
 package Pages;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.poi.ss.formula.functions.Log;
 import org.junit.Assert;
@@ -10,7 +11,6 @@ import utilities.ReuseableMethods;
 
 public class InformationAndConsentFormPage {
     ReuseableMethods reuseableMethods=new ReuseableMethods();
-    org.apache.log4j.Logger logger = Logger.getLogger(Log.class);
     public InformationAndConsentFormPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }

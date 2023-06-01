@@ -4,7 +4,11 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
+
+import java.time.Duration;
 
 public class PopulationRegisterPage {
     public PopulationRegisterPage(){
@@ -16,10 +20,36 @@ public class PopulationRegisterPage {
     public WebElement oneMoreThanDocumentQueryWarningText;
     public void verifyTheDocument(){
         try{
-            boolean b = !oneMoreThanDocumentQueryWarningText.isDisplayed();
             Assert.assertTrue(document.isDisplayed());
         } catch (Exception e) {
             Assert.assertTrue(oneMoreThanDocumentQueryWarningText.isDisplayed());
+        }
+
+
+    }
+
+    @FindBy(xpath = "//*[text()='Yeni Sorgulama']")
+    public WebElement yeniSorguButton;
+    @FindBy(xpath = "//*[text()='Geri']")
+    public WebElement geriButton;
+    @FindBy(xpath = "//*[text()='Kayıtlı Belgelerim']")
+    public WebElement kayitliBelgelerimButton;
+
+    @FindBy(xpath = "//table[@summary='Nüfus Kayıt Belgeleri Listesi']")
+    public WebElement nufusKayitBelgeleriListesi;
+    public void verifyTheButtons(){
+        try{
+            Assert.assertTrue(document.isDisplayed());
+        } catch (Exception e) {
+            Assert.assertTrue(oneMoreThanDocumentQueryWarningText.isDisplayed());
+            Assert.assertTrue(yeniSorguButton.isEnabled());
+            yeniSorguButton.click();
+            String expectedUrlYeniSorgu="https://www.turkiye.gov.tr/nvi-nufus-kayit-ornegi-belgesi-sorgulama?kullanici=bilgileri";
+            String actualUrlYeniSorgu=Driver.driver.getCurrentUrl();
+            Assert.assertEquals(expectedUrlYeniSorgu,actualUrlYeniSorgu);
+            Driver.driver.navigate().back();
+            kayitliBelgelerimButton.click();
+            Assert.assertTrue(nufusKayitBelgeleriListesi.isDisplayed());
         }
 
 

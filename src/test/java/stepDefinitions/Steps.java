@@ -86,4 +86,8 @@ public class Steps {
       populationRegisterPage.verifyTheDocument();
     }
 
+    @Then("verify the buttons Yeni Sorgulama and Kayitli Belgelerim function properly.")
+    public void verifyTheButtonsYeniSorgulamaAndKayitliBelgelerimFunctionProperly() {
+     populationRegisterPage.verifyTheButtons();
+    }
 }

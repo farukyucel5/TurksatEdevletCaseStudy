@@ -8,11 +8,22 @@ Feature: Nufus kayit ornegi belgesi sorgulama
     Then Click on the Button Devam Et
     And verify it redirects to the related page
     And scroll down the page
-    Then Choose one of the options "Nufus Kayıt Kişi" from the dropdown "Nufus Kayıt Ornegi"
-    And scroll down the page
-    And Choose the one of the option "Eski eş Hayır" from the "Eski Es Listele"
-    And scroll down the page
+    Then Choose one of the options "Nufus Kayıt Nüfus Aile" from the dropdown "Nufus Kayıt Ornegi"
+    And Choose the one of the option "Eski eş Evet" from the "Eski Es Listele"
     And  Choose the one of the option "Vukuatlı Belge Evet" from the "Vukuatlı Belge"
     And Choose one of the options "Verilme nedeni Kişi Talebi" from the dropdown "Belgenin Neden Verileceği"
     And Click on the Sorgula button
     Then verify that the related document has displayed
+  @smoke
+  Scenario: Testing the buttons "Yeni Sorgulama" and "Kayıtlı Belgelerim"
+    And Check the consent checkbox and verify it is enabled
+    Then Click on the Button Devam Et
+    And verify it redirects to the related page
+    And scroll down the page
+    Then Choose one of the options "Nufus Kayıt Nüfus Aile" from the dropdown "Nufus Kayıt Ornegi"
+    And Choose the one of the option "Eski eş Evet" from the "Eski Es Listele"
+    And  Choose the one of the option "Vukuatlı Belge Evet" from the "Vukuatlı Belge"
+    And Choose one of the options "Verilme nedeni Kişi Talebi" from the dropdown "Belgenin Neden Verileceği"
+    And Click on the Sorgula button
+    Then verify the buttons Yeni Sorgulama and Kayitli Belgelerim function properly.
+
