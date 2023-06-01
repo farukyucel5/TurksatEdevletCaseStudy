@@ -44,11 +44,10 @@ public class QueryFormPage {
     public WebElement vukuatliBelgeHayir;
     public void setCheckbox(String option,String name){
         switch(option){
-            case "Eski eş Hayır"->eskiEsListeleHayir.click();
-            case "Eski eş Evet"->eskiEsListeleEvet.click();
+            case "Eski eş Hayır"->reuseableMethods.jsClick(eskiEsListeleHayir);
+            case "Eski eş Evet"->reuseableMethods.jsClick(eskiEsListeleEvet);
             case "Vukuatlı Belge Evet"-> reuseableMethods.jsClick(vukuatliBelgeEvet);
-            case "Vukuatlı Belge Hayır"->vukuatliBelgeHayir.click();
-
+            case "Vukuatlı Belge Hayır"->reuseableMethods.jsClick(vukuatliBelgeHayir);
 
         }
 
@@ -57,7 +56,7 @@ public class QueryFormPage {
     @FindBy(className = "submitButton")
     public WebElement sorgulaButton;
     public void clickOntheSorgulaButton(){
-        sorgulaButton.click();
+        reuseableMethods.jsClick(sorgulaButton);
     }
 
 

@@ -15,9 +15,13 @@ public class PopulationRegisterPage {
     @FindBy(xpath = "//*[text()='Aynı gün içinde birden fazla belge üretilemez.']")
     public WebElement oneMoreThanDocumentQueryWarningText;
     public void verifyTheDocument(){
-        if (!oneMoreThanDocumentQueryWarningText.isDisplayed())
+        try{
+            boolean b = !oneMoreThanDocumentQueryWarningText.isDisplayed();
             Assert.assertTrue(document.isDisplayed());
-        else
+        } catch (Exception e) {
             Assert.assertTrue(oneMoreThanDocumentQueryWarningText.isDisplayed());
+        }
+
+
     }
 }

@@ -4,6 +4,7 @@ import Pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import utilities.Driver;
 import utilities.ReuseableMethods;
 
 public class Steps {
@@ -47,7 +48,6 @@ public class Steps {
     @And("Check the consent checkbox and verify it is enabled")
     public void checkTheConsentCheckboxAndVerifyItIsEnabled() {
         informationAndConsentFormPage.informationAndConsent();
-
     }
 
     @Then("Click on the Button Devam Et")
@@ -85,4 +85,5 @@ public class Steps {
     public void verifyThatTheRelatedDocumentHasDisplayed() {
       populationRegisterPage.verifyTheDocument();
     }
+
 }
