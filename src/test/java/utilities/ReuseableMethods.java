@@ -61,4 +61,9 @@ public class ReuseableMethods {
         }
     }
 
+    public void explicitlyWait(WebElement element){
+        WebDriverWait wait =new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
 }

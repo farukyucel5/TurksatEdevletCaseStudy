@@ -4,13 +4,13 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
+import utilities.ReuseableMethods;
 
 import java.time.Duration;
 
 public class PopulationRegisterPage {
+    ReuseableMethods reuseableMethods=new ReuseableMethods();
     public PopulationRegisterPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -20,9 +20,11 @@ public class PopulationRegisterPage {
     public WebElement oneMoreThanDocumentQueryWarningText;
     public void verifyTheDocument(){
         try{
-            Assert.assertTrue(document.isDisplayed());
-        } catch (Exception e) {
             Assert.assertTrue(oneMoreThanDocumentQueryWarningText.isDisplayed());
+
+        } catch (Exception e) {
+            reuseableMethods.scrollToElementByActions(1);
+            Assert.assertTrue(document.isDisplayed());
         }
 
 
@@ -39,8 +41,6 @@ public class PopulationRegisterPage {
     public WebElement nufusKayitBelgeleriListesi;
     public void verifyTheButtons(){
         try{
-            Assert.assertTrue(document.isDisplayed());
-        } catch (Exception e) {
             Assert.assertTrue(oneMoreThanDocumentQueryWarningText.isDisplayed());
             Assert.assertTrue(yeniSorguButton.isEnabled());
             yeniSorguButton.click();
@@ -50,6 +50,8 @@ public class PopulationRegisterPage {
             Driver.driver.navigate().back();
             kayitliBelgelerimButton.click();
             Assert.assertTrue(nufusKayitBelgeleriListesi.isDisplayed());
+        } catch (Exception e) {
+            Assert.assertTrue(document.isDisplayed());
         }
 
 
