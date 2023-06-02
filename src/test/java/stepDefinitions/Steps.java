@@ -4,7 +4,6 @@ import Pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import utilities.Driver;
 import utilities.ReuseableMethods;
 
 public class Steps {
@@ -26,7 +25,7 @@ public class Steps {
 
     @Then("Click on the Button Sorgula")
     public void clickOnTheButtonSorgula() {
-        onDutyPharmacyPage.clickOntheElement();
+        onDutyPharmacyPage.clickOntheSorgulaButton();
     }
 
     @Given("Navigate to the service {string}")
@@ -89,5 +88,26 @@ public class Steps {
     @Then("verify the buttons Yeni Sorgulama and Kayitli Belgelerim function properly.")
     public void verifyTheButtonsYeniSorgulamaAndKayitliBelgelerimFunctionProperly() {
      populationRegisterPage.verifyTheButtons();
+    }
+
+    @Given("Click on the Button Sorgula without filling the mandatory fields")
+    public void clickOnTheButtonSorgulaWithoutFillingTheMandatoryFields() {
+     onDutyPharmacyPage.clickOntheSorgulaButton();
+
+    }
+
+    @And("verify whether the warning texts have appeared.")
+    public void verifyWhetherTheWarningTextsHaveAppeared() {
+        onDutyPharmacyPage.verifyTheWarningTexts();
+    }
+
+    @And("Enter the date in a wrong format")
+    public void enterTheDateInAWrongFormat() {
+      onDutyPharmacyPage.sendTheWrongFormattedDate();
+    }
+
+    @Then("Verify whether the date field error message has appeared")
+    public void verifyWhetherTheDateFieldErrorMessageHasAppeared() {
+        onDutyPharmacyPage.verifyTheDateFieldErrorMessage();
     }
 }

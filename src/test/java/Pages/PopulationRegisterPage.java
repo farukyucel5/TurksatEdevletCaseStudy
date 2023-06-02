@@ -7,27 +7,26 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 import utilities.ReuseableMethods;
 
-import java.time.Duration;
-
 public class PopulationRegisterPage {
     ReuseableMethods reuseableMethods=new ReuseableMethods();
     public PopulationRegisterPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//embed[@type='application/x-google-chrome-pdf']")
-    public WebElement document;
     @FindBy(xpath = "//*[text()='Aynı gün içinde birden fazla belge üretilemez.']")
     public WebElement oneMoreThanDocumentQueryWarningText;
+    @FindBy(xpath = "//div[@class='warningContainer']")
+    public WebElement warningContainer;
+    @FindBy(xpath = "//a[text()='Dosyayı İndir']")
+    public WebElement downloadTheFile;
+
     public void verifyTheDocument(){
         try{
             Assert.assertTrue(oneMoreThanDocumentQueryWarningText.isDisplayed());
 
         } catch (Exception e) {
-            reuseableMethods.scrollToElementByActions(1);
-            Assert.assertTrue(document.isDisplayed());
+            Assert.assertTrue(downloadTheFile.isDisplayed());
+            Assert.assertTrue(warningContainer.isDisplayed());
         }
-
-
     }
 
     @FindBy(xpath = "//*[text()='Yeni Sorgulama']")
@@ -51,7 +50,8 @@ public class PopulationRegisterPage {
             kayitliBelgelerimButton.click();
             Assert.assertTrue(nufusKayitBelgeleriListesi.isDisplayed());
         } catch (Exception e) {
-            Assert.assertTrue(document.isDisplayed());
+            Assert.assertTrue(downloadTheFile.isDisplayed());
+            Assert.assertTrue(warningContainer.isDisplayed());
         }
 
 
