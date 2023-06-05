@@ -1,7 +1,4 @@
 package Pages;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.poi.ss.formula.functions.Log;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
