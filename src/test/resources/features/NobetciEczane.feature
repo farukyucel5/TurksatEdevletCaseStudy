@@ -25,6 +25,37 @@ Feature: On-duty pharmacies
     And Enter the date in a wrong format
     Then Click on the Button Sorgula
     Then Verify whether the date field error message has appeared
+ @smoke
+  Scenario: The feature "Favorilerime Ekle" is to function accurately.
+    Given Click on the button favorilerime ekle
+    And Navigate to the  Favori Hizmetlerim
+    And verify that the service has been added to favorite services.
+    And navigate back and hit the button Favorilerimden cıkar
+    And Navigate to the  Favori Hizmetlerim
+    Then verify that the service has been removed
+  @smoke
+  Scenario: The evaluation panel should appear when the user hits the 'Puanla' (Rate) or 'Bildir' (Report)
+  button and disappear when the user hits the 'Kapat' (Close) button.
+    Given Click on the button PuanlaBildir
+    And Verify that the evaluation panel has opened
+    And click on the button Kapat
+    Then Verify that the panel has disappeared
+  @smoke
+  Scenario Template: User should be able to evaluate the service giving stars and
+  if less than 5 stars are given, a dropdown should appear asking the reason for the choice.
+    Given Click on the button PuanlaBildir
+    And Rate the service by giving less than "<star>" stars and close the panel
+    Then Verify that the panel has disappeared
+    Examples:
+      | star |
+      |5     |
+      |4     |
+      |1     |
+
+
+
+
+
 
 
 

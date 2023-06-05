@@ -65,5 +65,13 @@ public class ReuseableMethods {
         WebDriverWait wait =new WebDriverWait(Driver.driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+    public void hardWait(int unitTime){
+        try {
+            Thread.sleep(unitTime* 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 }

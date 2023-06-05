@@ -110,4 +110,56 @@ public class Steps {
     public void verifyWhetherTheDateFieldErrorMessageHasAppeared() {
         onDutyPharmacyPage.verifyTheDateFieldErrorMessage();
     }
+
+    @Given("Click on the button favorilerime ekle")
+    public void clickOnTheButtonFavorilerimeEkle() {
+        onDutyPharmacyPage.addingToFavorites();
+    }
+
+    @And("verify that the service has been added to favorite services.")
+    public void verifyThatTheServiceHasBeenAddedToFavoriteServices() {
+       onDutyPharmacyPage.verifyOnDutyPharmacyHasBeenAddedToFavorites();
+    }
+
+    @And("Navigate to the  Favori Hizmetlerim")
+    public void navigateToTheFavoriHizmetlerim() {
+        onDutyPharmacyPage.navigateToTheFavorites();
+    }
+
+    @And("navigate back and hit the button Favorilerimden cıkar")
+    public void navigateBackAndHitTheButtonFavorilerimdenCıkar() {
+        onDutyPharmacyPage.removingFromTheFavorites();
+    }
+
+    @Then("verify that the service has been removed")
+    public void verifyThatTheServiceHasBeenRemoved() {
+        onDutyPharmacyPage.verifyingTheServiceHasBeenRemoved();
+    }
+
+    @Given("Click on the button PuanlaBildir")
+    public void clickOnTheButtonPuanlaBildir() {
+        onDutyPharmacyPage.clickOnThePuanlaBildir();
+    }
+
+    @And("Verify that the evaluation panel has opened")
+    public void verifyThatTheEvaluationPanelHasOpened() {
+        onDutyPharmacyPage.verifingTheAssertionPanel();
+    }
+
+    @And("click on the button Kapat")
+    public void clickOnTheButtonKapat() {
+        onDutyPharmacyPage.closeThePanel();
+
+    }
+
+    @Then("Verify that the panel has disappeared")
+    public void verifyThatThePanelHasDisappeared() {
+        onDutyPharmacyPage.verifyingThatTheEvaluationPanelHasClosed();
+    }
+
+    @And("Rate the service by giving less than {string} stars and close the panel")
+    public void rateTheServiceByGivingLessThanStarsAndCloseThePanel(String number) {
+        int star=Integer.parseInt(number);
+        onDutyPharmacyPage.setThePoint(star);
+    }
 }
