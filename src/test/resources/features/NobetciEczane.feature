@@ -40,7 +40,7 @@ Feature: On-duty pharmacies
     And Verify that the evaluation panel has opened
     And click on the button Kapat
     Then Verify that the panel has disappeared
-  @smoke
+  @smoke1
   Scenario Template: User should be able to evaluate the service giving stars and
   if less than 5 stars are given, a dropdown should appear asking the reason for the choice.
     Given Click on the button PuanlaBildir

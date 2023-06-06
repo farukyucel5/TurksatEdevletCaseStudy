@@ -50,8 +50,11 @@ public class PopulationRegisterPage {
             kayitliBelgelerimButton.click();
             Assert.assertTrue(nufusKayitBelgeleriListesi.isDisplayed());
         } catch (Exception e) {
-            Assert.assertTrue(downloadTheFile.isDisplayed());
-            Assert.assertTrue(warningContainer.isDisplayed());
+            Assert.assertTrue(yeniSorguButton.isEnabled());
+            yeniSorguButton.click();
+            String expectedUrlYeniSorgu="https://www.turkiye.gov.tr/nvi-nufus-kayit-ornegi-belgesi-sorgulama?kullanici=bilgileri";
+            String actualUrlYeniSorgu=Driver.driver.getCurrentUrl();
+            Assert.assertEquals(expectedUrlYeniSorgu,actualUrlYeniSorgu);
         }
 
 
