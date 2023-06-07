@@ -3,5 +3,5 @@ Projeyi klonladıktan sonra configuration properties dosyasındaki Tc kimlik num
 aksi taktirde program çalışmayacaktır.
 
 Note
-This project is specifically designed for Turkish software developers, 
+This project is specifically designed for Turkish citizens, 
 as it focuses on testing certain features of the Turkish E-government system.
