@@ -1,5 +1,6 @@
 
 package Pages;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,9 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 import utilities.ReuseableMethods;
 
-import java.util.List;
-
 public class OnDutyPharmacyPage {
+    private static final Logger logger = Logger.getLogger(OnDutyPharmacyPage.class);
     ReuseableMethods reuseableMethods=new ReuseableMethods();
     public OnDutyPharmacyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -84,9 +84,11 @@ public class OnDutyPharmacyPage {
     public  void selectCity(){
         Select select=new Select(cityDropdown);
         select.selectByVisibleText("ANKARA");
+        logger.info("The city selected");
     }
     public  void sendTheDate(){
         dateBox.sendKeys("03/06/2023");
+        logger.info("The date has been passed");
     }
     public void sendTheWrongFormattedDate(){
         dateBox.sendKeys("aa.aa.ee");

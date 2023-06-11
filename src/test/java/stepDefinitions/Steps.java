@@ -1,9 +1,15 @@
 package stepDefinitions;
 
 import Pages.*;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.qameta.allure.Step;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.BeforeClass;
 import utilities.ReuseableMethods;
 
 public class Steps {
@@ -13,6 +19,7 @@ public class Steps {
    InformationAndConsentFormPage informationAndConsentFormPage=new InformationAndConsentFormPage();
    QueryFormPage queryFormPage =new QueryFormPage();
    PopulationRegisterPage populationRegisterPage=new PopulationRegisterPage();
+
     @Given("Select the location")
     public void selectTheLocation() {
         onDutyPharmacyPage.selectCity();
