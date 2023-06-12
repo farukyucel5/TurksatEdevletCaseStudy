@@ -95,6 +95,7 @@ public class OnDutyPharmacyPage {
     }
     public void clickOntheSorgulaButton(){
        reuseableMethods.jsClick(sorgulaBtn);
+       logger.info("The sorgula button has been clicked");
     }
 
     public void verifyTheWarningTexts(){

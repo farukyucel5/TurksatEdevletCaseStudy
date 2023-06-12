@@ -1,5 +1,6 @@
 package Pages;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class PharmacyQueryPage {
+    private static final Logger logger = Logger.getLogger(PharmacyQueryPage.class);
     public PharmacyQueryPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -37,7 +39,9 @@ public class PharmacyQueryPage {
             String county=reuseableMethods.dataFetching(i,0).toString()
                     .replaceAll("\\s","");
             select.selectByVisibleText(county);
+            logger.info(county+" is selected");
             Assert.assertTrue(countyTable.isDisplayed());
+            logger.info("it is verified that "+county+" is selected");
         }
     }
 
