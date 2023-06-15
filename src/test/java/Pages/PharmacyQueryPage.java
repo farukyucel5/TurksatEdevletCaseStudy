@@ -48,7 +48,9 @@ public class PharmacyQueryPage {
     public void ClickOnTheButtonHaritadaGosterAndVerifyTheResult(){
         for (int i = 0; i < 20; i++) {
             reuseableMethods.jsClick(showingInTheMap.get(i));
+            logger.info("Haritada göster has been clicked");
             Assert.assertTrue(map.isDisplayed());
+            logger.info("it has been verified the map has been displayed properly");
             Driver.driver.navigate().back();
 
         }
