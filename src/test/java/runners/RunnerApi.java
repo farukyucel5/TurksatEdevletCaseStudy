@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = "src/test/resources/features",
         glue = {"stepDefinitions", "hooks/Edevlet"},
-        tags = "@smoke1",
+        tags = "@Test",
         dryRun = false
 )
 public class RunnerApi {

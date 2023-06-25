@@ -2,7 +2,7 @@ Feature: On-duty pharmacies
 
   Background: Navigating to the service to be tested
     Given Navigate to the service "On-Duty Pharmacy"
-  @smoke1
+  @Test
   Scenario: Find the pharmacies on duty based on the location.
     Given Select the location
     And Enter the date
