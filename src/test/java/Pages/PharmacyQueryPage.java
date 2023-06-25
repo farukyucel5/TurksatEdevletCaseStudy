@@ -40,7 +40,7 @@ public class PharmacyQueryPage {
                     .replaceAll("\\s","");
             select.selectByVisibleText(county);
             logger.info(county+" is selected");
-            Assert.assertFalse(countyTable.isDisplayed());
+            Assert.assertTrue(countyTable.isDisplayed());
             logger.info("it is verified that "+county+" is selected");
         }
     }
