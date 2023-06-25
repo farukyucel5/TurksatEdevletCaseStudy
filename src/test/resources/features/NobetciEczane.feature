@@ -8,7 +8,7 @@ Feature: On-duty pharmacies
     And Enter the date
     Then Click on the Button Sorgula
     And Select the county and verify the pharmacy table has been displayed
-  @smoke
+  @smoke1
   Scenario: Verify that Showing on the map feature should function properly
     Given Select the location
     And Enter the date

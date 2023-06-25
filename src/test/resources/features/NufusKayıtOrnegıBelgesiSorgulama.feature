@@ -2,7 +2,7 @@ Feature: Nufus kayit ornegi belgesi sorgulama
 
   Background: The service to be tested
     Given Navigate to the service "Certificate of birth registration copy."
-  @smoke
+  @smoke1
   Scenario:  Testing the service "The query of certificate of birth registration copy".
     And Check the consent checkbox and verify it is enabled
     Then Click on the Button Devam Et
@@ -14,7 +14,7 @@ Feature: Nufus kayit ornegi belgesi sorgulama
     And Choose one of the options "Verilme nedeni Kişi Talebi" from the dropdown "Belgenin Neden Verileceği"
     And Click on the Sorgula button
     Then verify that the related document has displayed
-  @smoke
+  @smoke1
   Scenario: Testing the buttons "Yeni Sorgulama" and "Kayıtlı Belgelerim"
     And Check the consent checkbox and verify it is enabled
     Then Click on the Button Devam Et
